@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Sara Lucia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d4a373;
+            --rose-gold: #b76e79;
+            --soft-pink: #fff0f5;
+            --dark-pink: #8b4a53;
+            --text-dark: #4a3e3d;
+            --gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdfbfb;
+            color: var(--text-dark);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 25px rgba(0,0,0,0.08);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5f6 0%, #ffebef 100%);
+            padding: 40px 20px 30px;
+            position: relative;
+            border-bottom: 2px solid #f3d5db;
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            color: var(--rose-gold);
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-family: 'Alex Brush', cursive;
+            font-size: 6rem;
+            color: rgb(202, 129, 129);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 6px 1px 2px rgba(0, 0, 0, 0.077);
+        }
+
+        /* Geometric Badge 15 */
+        .number-15-container {
+            width: 140px;
+            height: 140px;
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .geo-frame {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .geo-frame::before {
+            content: '';
+            position: absolute;
+            top: -6px; left: -6px; right: -6px; bottom: -6px;
+            border: 1px solid var(--primary);
+        }
+
+        .number-15 {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--rose-gold);
+            z-index: 2;
+            background: #fff5f6;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f3d5db;
+        }
+
+        .intro-phrase {
+            font-size: 1.25rem;
+            font-family: Garamond, serif;
+            color: var(--dark-pink);
+            margin: 25px 20px 10px;
+            line-height: 1.5;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 30px 25px;
+            border-bottom: 1px dashed #eed6dc;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--rose-gold);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* Countdown */
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .count-item {
+            background: var(--soft-pink);
+            border: 1px solid #f3d5db;
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 70px;
+        }
+
+        .count-number {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+        }
+
+        .count-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #7a5c61;
+        }
+
+        /* Family Info */
+        .family-card {
+            background: #faf4f5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .family-role {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--rose-gold);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .family-names {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        /* Aviso Note */
+        .aviso {
+            background: #fbf9f6;
+            border: 1px dashed #e2d2c1;
+            border-radius: 10px;
+            padding: 12px 18px;
+            margin: 20px 25px 0;
+            font-size: 0.82rem;
+            color: #7d6b63;
+            line-height: 1.5;
+        }
+
+        .aviso .aviso-note {
+            font-size: 0.82rem;
+            color: #7d6b63;
+            line-height: 1.45;
+        }
+
+        /* Event Details */
+        .event-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-top: 15px;
+        }
+
+        .event-icon {
+            font-size: 2rem;
+            color: var(--rose-gold);
+            margin-bottom: 10px;
+        }
+
+        .event-time {
+            font-weight: 600;
+            color: var(--dark-pink);
+            margin: 8px 0;
+        }
+
+        /* Gift Rain */
+        .gift-box {
+            background: linear-gradient(135deg, #fff9fa 0%, #fff0f3 100%);
+            border: 1px solid #f5d0d7;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--rose-gold) 0%, #a25964 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(183, 110, 121, 0.3);
+            transition: transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #999;
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Hero -->
+    <div class="hero">
+        <div class="header-title">¡Mis Quince Años!</div>
+        <div class="name">Sara Lucia</div>
+        
+        <div class="number-15-container">
+            <div class="geo-frame"></div>
+            <div class="number-15">15</div>
+        </div>
+        <br>
+
+        <p class="intro-phrase">
+            "Te invito a celebrar este día muy especial junto a mis seres queridos."
+        </p>
+    </div>
+
+    <!-- Countdown -->
+    <div class="section">
+        <div class="section-title">Sábado | 19 | Diciembre 2026</div>
+        <div class="countdown-grid" id="countdown">
+            <div class="count-item"><div class="count-number" id="days">00</div><div class="count-label">Días</div></div>
+            <div class="count-item"><div class="count-number" id="hours">00</div><div class="count-label">Hs</div></div>
+            <div class="count-item"><div class="count-number" id="minutes">00</div><div class="count-label">Min</div></div>
+            <div class="count-item"><div class="count-number" id="seconds">00</div><div class="count-label">Seg</div></div>
+        </div>
+    </div>
+
+    <!-- Family -->
+    <div class="section">
+        <div class="family-card">
+            <div class="family-role">Mis Padres</div>
+            <div class="family-names">
+                Adolfo Aguayo Chávez<br>
+                Priscila Cecilia Moreno Valdovinos
+            </div>
+        </div>
+        <div class="family-card">
+            <div class="family-role">Mis Padrinos</div>
+            <div class="family-names">
+                Constantino Alvarez<br>
+                Briseida Valdovinos Avalos
+            </div>
+        </div>
+    </div>
+
+    <!-- Locations -->
+    <div class="section">
+        <div class="section-title">Dónde & Cuándo</div>
+        
+        <!-- Ceremonia Religiosa -->
+        <div class="event-card">
+            <i class="fa-solid fa-church event-icon"></i>
+            <h3>Ceremonia Religiosa</h3>
+            <p><strong>Parroquia de Ntra. Sra. de Guadalupe</strong></p>
+            <p>Armería, Colima.</p>
+            <div class="event-time"><i class="fa-regular fa-clock"></i> 7:00 P.M.</div>
+            <a href="https://maps.google.com/?q=Parroquia+de+Nuestra+Senora+de+Guadalupe+Armeria+Colima" target="_blank" class="btn">
+                <i class="fa-solid fa-location-dot"></i> Ver en Mapa
+            </a>
+        </div>
+
+        <!-- Recepción / Fiesta -->
+        <div class="event-card" style="margin-top: 25px;">
+            <i class="fa-solid fa-glass-cheers event-icon"></i>
+            <h3>Recepción / Fiesta</h3>
+            <p><strong>Terraza de Eventos Real Primavera</strong></p>
+            <p>Armería, Colima.</p>
+            <div class="event-time"><i class="fa-regular fa-clock"></i> 8:30 P.M.</div>
+            <a href="https://maps.app.goo.gl/8S8Sp3rchHFe1A1g7" target="_blank" class="btn">
+                <i class="fa-solid fa-location-dot"></i> Ver en Mapa
+            </a>
+        </div>
+    </div>
+
+    <!-- Gifts -->
+    <div class="section">
+        <div class="gift-box">
+            <i class="fa-solid fa-envelope-open-text event-icon"></i>
+            <div class="section-title" style="font-size: 1.1rem;">Lluvia de Sobres</div>
+            <p style="font-size: 0.9rem; line-height: 1.4;">
+                Tu presencia es lo más importante en este día tan especial. Pero si deseas obsequiarme algo, agradecemos que sea en efectivo a través de una lluvia de sobres.
+            </p>
+        </div>
+    </div>
+
+    <!-- aviso -->
+    <div class="aviso">
+        <p>
+            <i class="fa-solid fa-circle-info" style="margin-right: 5px; opacity: 0.7;"></i>
+            Para esta celebración contaremos con bebidas sin alcohol. Si gustas disfrutar de alguna bebida de tu preferencia, puedes traerla contigo. ¡Gracias por acompañarnos en este día tan especial!
+        </p>
+    </div>
+
+    <!-- RSVP -->
+    <div class="section">
+        <div class="section-title">Confirmar Asistencia</div>
+        <p style="font-size: 0.85rem; margin-bottom: 15px;">Favor de confirmar asistencia antes de la fecha del evento.</p>
+        
+        <form id="rsvpForm">
+            <div class="form-group">
+                <label for="guestName">Nombre Completo:</label>
+                <input type="text" id="guestName" class="form-control" placeholder="Ej. Familia Pérez" required>
+            </div>
+            <div class="form-group">
+                <label for="guestCount">Número de Asistentes:</label>
+                <input type="number" id="guestCount" class="form-control" min="1" max="10" value="1" required>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">
+                <i class="fa-brands fa-whatsapp"></i> Confirmar por WhatsApp
+            </button>
+        </form>
+    </div>
+
+    <footer>
+        Con cariño, Sara Lucia ♡ 2026
+    </footer>
+</div>
+
+<script>
+    // Cuenta regresiva al 19 de Diciembre de 2026 19:00:00
+    const eventDate = new Date('December 19, 2026 19:00:00').getTime();
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const difference = eventDate - now;
+
+        if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+    };
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // RSVP vía WhatsApp (Número: 313-106-1292)
+    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('guestName').value;
+        const count = document.getElementById('guestCount').value;
+        const phone = "523131061292"; // Formato internacional
+        
+        const message = `Hola, confirmo mi asistencia a los XV de Sara Lucia.%0A%0A- Nombre: ${encodeURIComponent(name)}%0A- Personas: ${count}`;
+        window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    });
+</script>
+
+</body>
+</html>
